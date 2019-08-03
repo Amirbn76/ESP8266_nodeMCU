@@ -21,7 +21,7 @@ void loop() {
         client.println("Host: /*Host*/");
         client.println("Content-Length: "+String(payload.length()));
         client.println();  
-        client.print(payload);
+        client.print(payload);    //carefull! println contains "\n" at the end an content_length should be "payload.length()+2"
         delay(2000);
         while(client.available()){
           Serial.println("Client available");
